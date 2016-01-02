@@ -9,7 +9,7 @@ Options:
   --port PORT   : Port
 
 """
-import sys
+
 import socket
 from docopt import docopt
 
@@ -19,6 +19,7 @@ __author__ = 'Gokhan MANKARA <gokhan@mankara.org>'
 def main(h, p):
 
     print("Connecting HOST: {} PORT: {}".format(h, p))
+
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     sock.settimeout(3)
     result = sock.connect_ex((h, int(p)))
@@ -29,6 +30,7 @@ def main(h, p):
         print("Port {} NOT ACTIVE for {}".format(p, h))
 
 if __name__ == "__main__":
+
     args = docopt(__doc__)
 
     host = args['--host']
