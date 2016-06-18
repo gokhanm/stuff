@@ -58,6 +58,6 @@ if __name__ == "__main__":
         else:
             process_status.append(False)
 
-    if not any(process_status) is True:
+    if any(process_status) is False:
         print "Process %s NOT FOUND" % process_name
 
